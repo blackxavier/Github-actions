@@ -10,3 +10,15 @@ jobs:
               uses: actions/checkout@v4
             - name: Run Script
               run: sh ascii.sh
+            - name: Sleep
+              run: sleep 30
+    second_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+            - name: Install packages
+              run: |
+                pip install django==4 djangorestframework
+            - name: Echo
+              run: echo "Deploying ................"
