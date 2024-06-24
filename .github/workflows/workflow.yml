@@ -13,3 +13,4 @@ jobs:
                 echo "My First Github Actions Workflow"
                 ls -ltra
                 cat README.md
+                pwd
