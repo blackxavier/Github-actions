@@ -1,0 +1,17 @@
+name: Workflow 2
+
+on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+            - name: Install Cowsay
+              run: sudo apt-get install cowsay -y
+            - name: Print in ASCII Format
+              run: cowsay -f dragon "Chief Builder" >> builder.txt
+            - name: Test file exits and print it
+              run: |
+                cat builder.txt
