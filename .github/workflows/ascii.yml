@@ -11,7 +11,7 @@ jobs:
             - name: Install Cowsay
               run: sudo apt-get install cowsay -y
             - name: Print in ASCII Format
-              run: cowsay -f snake "Chief Builder" >> builder.txt
+              run: cowsay -f dragon "Chief Builder" >> builder.txt
             - name: Test file exits and print it
               run: |
                 cat builder.txt
