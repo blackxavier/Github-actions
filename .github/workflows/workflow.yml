@@ -13,5 +13,10 @@ jobs:
                 echo "My First Github Actions Workflow"
                 ls -ltra
                 cat README.md
+            - name: Install Cowsay
+              run: sudo apt-get install cowsay -y
             - name: Print in ASCII Format
               run: cowsay -f dragon "Chief Builder" >> builder.txt
+            - name: Test file exits and print it
+              run: |
+                cat builder.txt
