@@ -9,8 +9,8 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v4
             - name: Echo
-              run: echo "My First Github Actions Workflow"
-            - name: Print File
-              run: cat README.md
-            - name: List Files
-              run: ls
+              run: 
+                | 
+                echo "My First Github Actions Workflow"
+                ls -ltra
+                cat README.md
