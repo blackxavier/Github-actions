@@ -9,4 +9,4 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v4
             - name: Run Script
-              run: sh /ascii.sh
+              run: sh ascii.sh
