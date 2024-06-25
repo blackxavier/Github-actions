@@ -6,7 +6,7 @@ on:
 env:
     CONTAINER_REGISTRY: docker.io
     USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-    PASSWORD: ${{ secrets.DOCKER_HUB_USERNAME }}
+    PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
