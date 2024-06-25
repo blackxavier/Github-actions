@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build Docker Image
-        run: echo docker build -t $CONTAINER_REGISTRY/${{secrets.DOCKER_HUB_USERNAME}}/$IMAGE_NAME:latest
+        run: echo docker build -t ${{ vars.CONTAINER_REGISTRY}}/${{secrets.DOCKER_HUB_USERNAME}}/${{ vars.IMAGE_NAME}}:latest
 
       - name: Login into  Docker
         run: echo docker login --username ${{secrets.DOCKER_HUB_USERNAME}} --password ${{secrets.DOCKER_HUB_PASSWORD}}
 
       - name: Push to Docker
-        run: echo docker push $CONTAINER_REGISTRY/${{secrets.DOCKER_HUB_USERNAME}}/$IMAGE_NAME:latest
+        run: echo docker push ${{ vars.CONTAINER_REGISTRY}}/${{secrets.DOCKER_HUB_USERNAME}}/${{ vars.IMAGE_NAME}}:latest
