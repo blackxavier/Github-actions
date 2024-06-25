@@ -1,0 +1,22 @@
+name: CI/CD Pipeline - Simple ENV&SECRETS
+
+on:
+  push:
+    branches: [main]
+env:
+  CONTAINER_REGISTRY: docker.io
+  USERNAME: chiefbuilder
+  PASSWORD: Computerscience@01
+  IMAGE_NAME: flask-app
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker Image
+        run: echo docker build -t $CONTAINER_REGISTRY/$USERNAME/$IMAGE_NAME:latest
+
+      - name: Login into  Docker
+        run: echo docker login --username $USERNAME --password $PASSWORD
+
+      - name: Push to Docker
+        run: echo docker push $CONTAINER_REGISTRY/$USERNAME/$IMAGE_NAME:latest
