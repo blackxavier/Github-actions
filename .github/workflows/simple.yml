@@ -42,4 +42,6 @@ jobs:
     needs: build
     steps:
       - name: Deploy app on instance
-        run: echo docker run -p 8000:8000 -d ${{ vars.CONTAINER_REGISTRY}}/${{secrets.DOCKER_HUB_USERNAME}}/${{ vars.IMAGE_NAME}}:latest
+        run: |
+          echo docker run -p 8000:8000 -d ${{ vars.CONTAINER_REGISTRY}}/${{secrets.DOCKER_HUB_USERNAME}}/${{ vars.IMAGE_NAME}}:latest
+          sleep 300
