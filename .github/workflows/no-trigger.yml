@@ -18,3 +18,5 @@ jobs:
     steps:
       - name: Run Command
         run: echo "This command is ran by the ${{ github.event_name}} activity type"
+      - name: Run Command
+        run: echo "This is a test command"
