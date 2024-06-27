@@ -7,22 +7,16 @@ on:
 
 jobs:
   stage1:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-22.04]
+        DockerImages: [hello-world, alpine, nginx]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 2
     steps:
       - name: Get Docker details
         run: docker info
       - name: Get Docker Version
         run: docker version
-      - name: Run Images
-        run: docker run hello-world
-  stage2:
-    runs-on: windows-latest
-    timeout-minutes: 2
-    steps:
-      - name: Get Docker details
-        run: docker info
-      - name: Get Docker Version
-        run: docker version
-      - name: Run Images
-        run: docker run hello-world
+      - name: Run Images ${matrix.DockerImages}}
+        run: docker run ${{matrix.DockerImages}}
