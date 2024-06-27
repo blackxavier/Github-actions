@@ -7,6 +7,10 @@ on:
     types:
       - opened
       - closed
+    paths-ignore:
+      - README.md
+    branches: 
+      - main
 
 #   schedule:
 #     # - cron: "*/1 * * * *"
@@ -22,3 +26,5 @@ jobs:
         run: echo "This command is owned  by the ${{ github.repository_owner}} "
       - name: Run Command
         run: echo "${{ github.triggering_actor}} "
+      - name: Run Command
+        run: echo "${{ github.base_ref}} "
