@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install django==${{ matrix.django-version }}
-          pip install -r requirements.txt
+
 
       - name: Run tests
         run: python manage.py test
