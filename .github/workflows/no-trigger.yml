@@ -7,10 +7,9 @@ on:
     types:
       - opened
       - closed
-    paths-ignore:
-      - README.md
     branches:
       - main
+    paths-ignore: text.txt
 
 
 jobs:
