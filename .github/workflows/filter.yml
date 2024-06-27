@@ -3,6 +3,15 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+  pull_request:
+    types:
+      - opened
+      - closed
+    paths-ignore:
+      - README.md
+    branches:
+      - main
+
 #   schedule:
 #     # - cron: "*/1 * * * *"
 #     - cron: "*/59 * * * *"
@@ -12,4 +21,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Command
+        run: echo "This command is ran by the ${{ github.event_name}} activity type"
+      - name: Run Command
+        run: echo "This command is owned  by the ${{ github.repository_owner}} "
+      - name: Run Command
+        run: echo "${{ github.triggering_actor}} "
+      - name: Run Command
+        run: echo "${{ github.base_ref}} "
+      - name:
         run: echo "This command ir ran by the ${{ github.event_name}} activity type"
