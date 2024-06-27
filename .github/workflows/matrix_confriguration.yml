@@ -8,9 +8,15 @@ on:
 jobs:
   stage1:
     strategy:
+      fail-fast: false
+      max-parallel: 2
       matrix:
-        os: [ubuntu-latest, ubuntu-22.04]
+        os: [ubuntu-latest, ubuntu-22.04, windows-latest]
         DockerImages: [hello-world, alpine]
+        exclude:
+          - DockerImages: alpine
+            os: windows-latest
+
     runs-on: ${{ matrix.os }}
     timeout-minutes: 2
     steps:
