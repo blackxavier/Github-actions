@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, ubuntu-22.04]
-        DockerImages: [hello-world, alpine, nginx]
+        DockerImages: [hello-world, alpine]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 2
     steps:
