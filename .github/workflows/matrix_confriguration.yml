@@ -1,0 +1,28 @@
+name: CI/CD Pipeline - Matrix Configuration
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  stage1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Get Docker details
+        run: docker info
+      - name: Get Docker Version
+        run: docker version
+      - name: Run Images
+        run: docker run hello-world
+  stage2:
+    runs-on: windows-latest
+    timeout-minutes: 2
+    steps:
+      - name: Get Docker details
+        run: docker info
+      - name: Get Docker Version
+        run: docker version
+      - name: Run Images
+        run: docker run hello-world
