@@ -9,9 +9,8 @@ on:
       - closed
     paths-ignore:
       - README.md
-    branches: 
+    branches:
       - main
-
 
 #   schedule:
 #     # - cron: "*/1 * * * *"
@@ -29,5 +28,5 @@ jobs:
         run: echo "${{ github.triggering_actor}} "
       - name: Run Command
         run: echo "${{ github.base_ref}} "
+      - name:
         run: echo "This command ir ran by the ${{ github.event_name}} activity type"
-
