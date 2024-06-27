@@ -16,7 +16,7 @@ jobs:
         exclude:
           - DockerImages: alpine
             os: windows-latest
-
+        
     runs-on: ${{ matrix.os }}
     timeout-minutes: 2
     steps:
