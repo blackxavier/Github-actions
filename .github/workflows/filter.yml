@@ -12,6 +12,7 @@ on:
     branches: 
       - main
 
+
 #   schedule:
 #     # - cron: "*/1 * * * *"
 #     - cron: "*/59 * * * *"
@@ -28,3 +29,5 @@ jobs:
         run: echo "${{ github.triggering_actor}} "
       - name: Run Command
         run: echo "${{ github.base_ref}} "
+        run: echo "This command ir ran by the ${{ github.event_name}} activity type"
+
